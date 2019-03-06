@@ -22,5 +22,16 @@ ActiveRecord::Schema.define(version: 2019_03_05_174520) do
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
+  create_table "artists", force: :cascade do |t|
+  t.string   "name",        null: false
+  t.text     "description", null: false
+  t.integer  "user_id",     null: false
+  t.datetime "created_at",  null: false
+  t.datetime "updated_at",  null: false
+  t.index ["user_id", "name"], name: "index_artists_on_user_id_and_name", using: :btree
+  t.index ["user_id"], name: "index_artists_on_user_id", using: :btree
+end
+
+add_foreign_key "artists", "users"
 
 end
