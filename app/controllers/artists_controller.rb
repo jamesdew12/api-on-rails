@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  before_action :require_login
   def index
     @artists = Artist.all
 
