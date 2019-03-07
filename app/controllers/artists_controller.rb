@@ -1,18 +1,18 @@
 class ArtistsController < ApplicationController
   before_action :require_login
   def index
-    @artists = Artist.all
+    @artists = current_user.artists.order(:id )
 
   end
 
   def show
-    @artist = Artist.find(params[:id])
+    @artist = current_user.artists.find(params[:id])
   end
   def new
-    @recipe = Artist.new
+    @recipe = current_user.artists.build
   end
   def create
-    @artist = Artist.new(artist_params)
+    @artist = current_user.artists.build(artist_params)
 
     if @artist.save
       redirect_to artist_path(@artist), notice: "artist created"
@@ -22,8 +22,22 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def edit
+    @artist = current_user.artists.find(params[:id])
+  end
+  def update
+    @artist = current_user.artists.find(params[:id])
+
+    if @artist.update_attributes(artist_params)
+      redirect_to artist_path(@artist), notice: "artist Updated"
+    else
+      @errors = @artist.errors.full_messages
+      render :edit
+    end
+  end
+
   def destroy
-    artist = Artist.find(params[:id])
+    artist = current_user.artists.find(params[:id])
     artist.destroy
     redirect_to artists_path, notice: "Deleted Artist: #{artist.name}"
 
