@@ -12,13 +12,16 @@
 
    h1 {
     margin: 0;
-
   }
-  .artist-container {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 150px; /* Set a small width */
-  }
+}
 
+.artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+.artist {
+  width: 30%;
+  nin-width: 300px;
 }
