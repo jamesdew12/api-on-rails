@@ -1,9 +1,10 @@
+<div class="title-container">
+
+
 <h1>Artists</h1> <h5>create an index of your fav artists</h5>
-
-
-<div>
-  <%= link_to "New Artist", new_artist_path %>
+  <%= link_to "New Artist", new_artist_path, class: "btn btn-primary" %>
 </div>
+
 
  <div class="artists">
   <% @artists.each do |artist| %>
