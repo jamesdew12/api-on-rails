@@ -1,24 +1,4 @@
 # README
-Post course makers I am building a rails API
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* .
+Post course makers I am building a rails API to solidfy my rails knowledge
+I wanted to work on my front end work
+<img width="1422" alt="Screenshot 2019-03-13 at 13 53 31" src="https://user-images.githubusercontent.com/43011172/54284379-bd4f9b80-4597-11e9-9e72-514ed005a693.png">
